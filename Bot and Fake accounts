@@ -1,0 +1,6 @@
+select users.id, users.username, count(*) as total_likes
+from users 
+join likes
+on likes.user_id = users.id
+group by likes.user_id
+having total_likes=(select count(*) from photos as total_photos);
