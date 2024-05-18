@@ -1,0 +1,8 @@
+select tags.tag_name,
+count(*) as popular_tags
+from photo_tags
+left join tags
+on photo_tags.tag_id=tags.id
+group by tags.id
+order by popular_tags desc
+limit 5;
