@@ -1,0 +1,4 @@
+select username,created_at,
+rank() over(order by created_at) as oldest_customers
+from users
+limit 5;
