@@ -1,0 +1,6 @@
+select dayname(created_at) as Day,
+count(*) as total_registers
+from users
+group by Day
+order by total_registers desc
+limit 5;
